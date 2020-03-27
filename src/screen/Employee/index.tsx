@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios'
+import Today from '../Today/Today'
 
 export default class EmployeeScreen extends React.Component {
 
@@ -28,6 +29,7 @@ export default class EmployeeScreen extends React.Component {
             <div>
                 <span>Hello Adamo</span>
                 <div>{this.state.err}</div>
+                <Today />
                 <div className="row mr-0 ml-0">
                     {this.state.data.map(a => {
                         return (
