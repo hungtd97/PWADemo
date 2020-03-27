@@ -9,7 +9,7 @@ export default class EmployeeScreen extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('	http://dummy.restapiexample.com/api/v1/employees')
+        axios.get('https://dummy.restapiexample.com/api/v1/employees')
             .then((response) => {
                 console.log('response', response.data.data)
                 this.setState({ data: response.data.data })
