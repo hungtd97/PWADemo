@@ -23,13 +23,13 @@ export default class EmployeeScreen extends React.Component {
     render() {
         return (
             <div>
-                Hello Adamo
+                <span>Hello Adamo</span>
                 <div>{this.state.err}</div>
-                <div>
+                <div className="row mr-0 ml-0">
                     {this.state.data.map(a => {
                         return (
                             //@ts-ignore
-                            <div className="name" key={a.id}>Name: {a.employee_name}</div>
+                            <div className="col-md-3 name" key={a.id}><span>Name: {a.employee_name}</span></div>
                         )
                     })}
                 </div>
