@@ -12,7 +12,10 @@ export default class EmployeeScreen extends React.Component {
         axios.get('https://dummy.restapiexample.com/api/v1/employees')
             .then((response) => {
                 console.log('response', response.data.data)
-                this.setState({ data: response.data.data })
+                console.log('before setStatee')
+                this.setState({ data: response.data.data }, () => {
+                    console.log('after setState')
+                })
             })
             .catch((err) => {
                 console.log('err', err)
