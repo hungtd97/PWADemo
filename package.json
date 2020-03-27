@@ -15,6 +15,8 @@
     "express": "^4.17.1",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
+    "prop-types": "^15.7.2",
+    "pusher-js": "^5.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",

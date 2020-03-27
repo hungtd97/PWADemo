@@ -2,6 +2,7 @@ import React from 'react';
 import "../../assets/css/style.scss";
 import "../../assets/css/bootstrap.min.css";
 import logo from '../../assets/image/logo.png'
+import Today from '../Today/Today'
 export default class HomeScreen extends React.Component {
 
     navigate = () => {
@@ -20,6 +21,9 @@ export default class HomeScreen extends React.Component {
                 </div>
                 <div>
                     <button onClick={this.navigate}>Navigate to Employee</button>
+                </div>
+                <div>
+                    <Today />
                 </div>
             </div>
         )
