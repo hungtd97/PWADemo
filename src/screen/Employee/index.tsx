@@ -24,19 +24,28 @@ export default class EmployeeScreen extends React.Component {
             })
     }
 
+    renderItem = () => {
+        const { data } = this.state
+        console.log('data', data);
+        {
+            data.map(a => {
+                return (
+                    //@ts-ignore
+                    <div className="col-md-3 name" key={a.id}><span>Name: {a.employee_name}</span></div>
+                )
+            })
+        }
+    }
+
     render() {
+
         return (
             <div>
                 <span>Hello Adamo</span>
                 <div>{this.state.err}</div>
                 <Today />
                 <div className="row mr-0 ml-0">
-                    {this.state.data.map(a => {
-                        return (
-                            //@ts-ignore
-                            <div className="col-md-3 name" key={a.id}><span>Name: {a.employee_name}</span></div>
-                        )
-                    })}
+                    {this.renderItem}
                 </div>
             </div>
         )
