@@ -15,7 +15,7 @@ export default class EmployeeScreen extends React.Component {
                 console.log('response', response.data.data)
                 console.log('before setStatee')
                 this.setState({ data: response.data.data }, () => {
-                    console.log('after setState')
+
                 })
             })
             .catch((err) => {
@@ -27,14 +27,19 @@ export default class EmployeeScreen extends React.Component {
     renderItem = () => {
         const { data } = this.state
         console.log('data', data);
-        {
-            data.map(a => {
-                return (
-                    //@ts-ignore
-                    <div className="col-md-3 name" key={a.id}><span>Name: {a.employee_name}</span></div>
-                )
-            })
-        }
+        return (
+            <>
+                {
+                    data.map(a => {
+                        return (
+                            //@ts-ignore
+                            <div className="col-md-3 name" key={a.id}><span>Name: {a.employee_name}</span></div>
+                        )
+                    })
+                }
+            </>
+        )
+
     }
 
     render() {
@@ -45,7 +50,7 @@ export default class EmployeeScreen extends React.Component {
                 <div>{this.state.err}</div>
                 <Today />
                 <div className="row mr-0 ml-0">
-                    {this.renderItem}
+                    {this.renderItem()}
                 </div>
             </div>
         )
