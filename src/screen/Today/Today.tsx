@@ -43,6 +43,7 @@ class Today extends Component {
 	restoreStateFromLocalStorage = () => {
 		//@ts-ignore
 		const state = JSON.parse(localStorage.getItem('today-state'));
+		console.log('localStorage state', state)
 		this.setState(state);
 	};
 
