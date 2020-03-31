@@ -28,8 +28,12 @@ export default class EmployeeScreen extends React.Component {
                 .then((response) => {
                     console.log('response', response.data.data)
                     console.log('before setStatee')
-                    this.setState({ data: response.data.data }, this.saveStateToLocalStorage)
-                    this.setState({ dataTest: response.data.data }, this.saveStateToLocalStorage)
+                    const data = response.data.data.map((a: any) => {
+                        return { ...a }
+                    })
+                    console.log('data', data)
+                    this.setState({ data: data }, this.saveStateToLocalStorage)
+                    this.setState({ dataTest: data }, this.saveStateToLocalStorage)
                 })
                 .catch((err) => {
                     console.log('err', err)
