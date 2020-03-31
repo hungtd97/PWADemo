@@ -6,7 +6,8 @@ export default class EmployeeScreen extends React.Component {
 
     state = {
         data: [],
-        err: ''
+        err: '',
+        dataTest: [1, 2, 3, 4, 5]
     }
     saveStateToLocalStorage = () => {
         localStorage.setItem('employees', JSON.stringify(this.state));
@@ -45,6 +46,7 @@ export default class EmployeeScreen extends React.Component {
                 <div className="text-light text-center mt-2 mb-2">Number of Employees: {data.length}</div>
                 {
                     data.map(a => {
+                        console.log('render', a)
                         return (
                             //@ts-ignore
                             <div className="col-md-3 name" key={a.id}><span>Name: {a.employee_name}</span></div>
@@ -53,7 +55,25 @@ export default class EmployeeScreen extends React.Component {
                 }
             </>
         )
+    }
 
+    renderTest = () => {
+        const { dataTest } = this.state
+        return (
+            <>
+                {
+                    dataTest.map(a => {
+                        return (<div className="text-center mt-2 mb-2 ml-2 mr-2 text-white">
+                            {a}
+                        </div>)
+                    })
+                }
+            </>
+        )
+    }
+
+    setStateDataTest = () => {
+        this.setState({ dataTest: [1, 2, 3, 4, 5, 6, 7, 8, 9] })
     }
 
     render() {
@@ -66,6 +86,10 @@ export default class EmployeeScreen extends React.Component {
                 <div className="row mr-0 ml-0">
                     {this.renderItem()}
                 </div>
+                <div className="row mr-0 ml-0">
+                    {this.renderTest()}
+                </div>
+                <button onClick={this.setStateDataTest}>Change State</button>
             </div>
         )
     }
