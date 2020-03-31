@@ -29,7 +29,7 @@ export default class EmployeeScreen extends React.Component {
                     console.log('response', response.data.data)
                     console.log('before setStatee')
                     this.setState({ data: response.data.data }, this.saveStateToLocalStorage)
-                    this.setState({ dataTest: [3, 2, 4, 45, 345, 12] })
+                    this.setState({ dataTest: response.data.data }, this.saveStateToLocalStorage)
                 })
                 .catch((err) => {
                     console.log('err', err)
@@ -64,9 +64,10 @@ export default class EmployeeScreen extends React.Component {
             <>
                 {
                     dataTest.map(a => {
-                        return (<div className="text-center mt-2 mb-2 ml-2 mr-2 text-white">
-                            {a}
-                        </div>)
+                        return (
+                            //@ts-ignore
+                            <div className="text-center mt-2 mb-2 ml-2 mr-2 text-white">{a.id}
+                            </div>)
                     })
                 }
             </>
