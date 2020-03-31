@@ -29,10 +29,10 @@ export default class EmployeeScreen extends React.Component {
                     console.log('response', response.data.data)
                     console.log('before setStatee')
                     const data = response.data.data.map((a: any) => {
-                        return { ...a }
+                        return a.employee_name
                     })
                     console.log('data', data)
-                    this.setState({ data: data }, this.saveStateToLocalStorage)
+                    this.setState({ data: response.data.data }, this.saveStateToLocalStorage)
                     this.setState({ dataTest: data }, this.saveStateToLocalStorage)
                 })
                 .catch((err) => {
@@ -51,7 +51,6 @@ export default class EmployeeScreen extends React.Component {
                 <div className="text-light text-center mt-2 mb-2">Number of Employees: {data.length}</div>
                 {
                     data.map(a => {
-                        console.log('render', a)
                         return (
                             //@ts-ignore
                             <div className="col-md-3 name" key={a.id}><span>Name: {a.employee_name}</span></div>
@@ -64,13 +63,14 @@ export default class EmployeeScreen extends React.Component {
 
     renderTest = () => {
         const { dataTest } = this.state
+        console.log('data test', dataTest);
         return (
             <>
                 {
                     dataTest.map((a, b) => {
                         return (
                             //@ts-ignore
-                            <div className="text-center mt-2 mb-2 ml-2 mr-2 text-white" key={b}>{dataTest.length}</div>)
+                            <div className="text-center mt-2 mb-2 ml-2 mr-2 text-white" key={b}>{a}</div>)
                     })
                 }
             </>
