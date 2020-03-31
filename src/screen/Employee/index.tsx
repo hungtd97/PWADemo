@@ -7,7 +7,7 @@ export default class EmployeeScreen extends React.Component {
     state = {
         data: [],
         err: '',
-        dataTest: [1, 2, 3, 4, 5]
+        dataTest: []
     }
     saveStateToLocalStorage = () => {
         localStorage.setItem('employees', JSON.stringify(this.state));
