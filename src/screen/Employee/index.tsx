@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 import Today from '../Today/Today'
+import { Employee } from '../Employee/Employee'
 
 export default class EmployeeScreen extends React.Component {
 
@@ -70,7 +71,7 @@ export default class EmployeeScreen extends React.Component {
                     dataTest.map((a, b) => {
                         return (
                             //@ts-ignore
-                            <div className="text-center mt-2 mb-2 ml-2 mr-2 text-white" key={b}>{a}</div>)
+                            <Employee key={b} data={a} />)
                     })
                 }
             </>
