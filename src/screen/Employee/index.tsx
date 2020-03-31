@@ -66,8 +66,7 @@ export default class EmployeeScreen extends React.Component {
                     dataTest.map(a => {
                         return (
                             //@ts-ignore
-                            <div className="text-center mt-2 mb-2 ml-2 mr-2 text-white">{a.id}
-                            </div>)
+                            <div className="text-center mt-2 mb-2 ml-2 mr-2 text-white">{dataTest.length}</div>)
                     })
                 }
             </>
