@@ -1,3 +1,8 @@
+@font-face {
+  font-family: myFont;
+  src: url("../font/BalooThambi2-Regular.ttf");
+}
+
 button {
   padding: 10px 20px;
   background-color: #283336;
@@ -16,6 +21,93 @@ span {
 
 body {
   background: #042e36 !important;
+  font-family: myFont !important;
 }
 
+.magic-container {
+  overflow: hidden;
+  .panel, .code-panel {
+    height: 100vh;
+    width: 100vw;
+    padding: 0 40px;
+    text-align: left;
+    color: #fff;
+  }
 
+  .panel.head {
+    text-align: center;
+
+    span {
+      position: relative;
+      display: block;
+      overflow: visible;
+      top: 30%;
+      font-size: 120px;
+      text-align: center;
+    }
+  }
+
+  .panel span {
+    position: relative;
+    overflow: visible;
+    font-size: 80px;
+    text-align: left;
+  }
+
+  th {
+    padding: 0 10px;
+  }
+
+  .panel.first {
+    background-color: #3883d8;
+
+    img {
+      position: absolute;
+      right: 40px;
+      top: 40px;
+      width: 20%;
+      background-color: #fff;
+    }
+
+    .content {
+      padding-left: 50px;
+    }
+  }
+
+  .panel.second {
+    background-color: #38ced7;
+    margin-bottom: 800px;
+
+    .android-gif {
+      width: 400px;
+    }
+
+    .ios-gif {
+      width: 350px;
+    }
+  }
+
+  .panel.green {
+    background-color: #22d659;
+    margin-bottom: 800px;
+  }
+
+  .panel.third {
+    background-color: #953543;
+    padding-bottom: 400px;
+  }
+
+  .panel.forth{
+    background-color: #3883d8;
+    top: 20%
+  }
+
+  .panel.fifth, .code-panel.fifth{
+    background-color: #953543;
+    top: 20%
+  }
+}
+
+.background-white {
+  background-color: #fff;
+}
